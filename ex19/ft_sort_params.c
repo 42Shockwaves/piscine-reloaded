@@ -1,4 +1,9 @@
-void	ft_putchar(char c);
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_putstr(char *str)
 {
@@ -25,17 +30,17 @@ int		ft_strcmp(char *s1, char *s2)
 int		main(int argc, char **argv)
 {
 	char	*tmp;
-	int		find;
-	int		i;
+	int find;
+	int i;
 
-	find = 1;
-	while (find)
+	find = 1; 
+	while (find) 
 	{
 		find = 0;
-		i = 0;
-		while (i < argc - 1)
+		i = 1; 
+		while (i < argc - 1) 
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0) 
 			{
 				tmp = argv[i];
 				argv[i] = argv[i + 1];
@@ -45,7 +50,7 @@ int		main(int argc, char **argv)
 			i++;
 		}
 	}
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		ft_putstr(argv[i]);
@@ -53,4 +58,6 @@ int		main(int argc, char **argv)
 		i++;
 	}
 	return (0);
+
 }
+
